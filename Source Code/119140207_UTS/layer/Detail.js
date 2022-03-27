@@ -1,13 +1,18 @@
-import React, { useState } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Alert } from 'react-native';
 import { FontAwesome, MaterialCommunityIcons, Feather } from '@expo/vector-icons';
 import Detail_Card from '../components/Detail_Card';
 
 const Detail = ({navigation, route}) => {
 
+    const Transfer = () =>{
+
+        Alert.alert("TRANSFER KE NOMOR REKENING: 67384xxxxxxxx")
+
+    }
+
     const Batal = () => {
         Alert.alert("Pesanan Dibatalkan")
-        navigation.goBack()
+        navigation.navigate('Dummy', { awal: route.params.awal, tujuan: route.params.tujuan, layanan: route.params.layanan, tanggal: route.params.tanggal, waktu: route.params.waktu })
     }
 
     return(
@@ -42,6 +47,10 @@ const Detail = ({navigation, route}) => {
                     </TouchableOpacity>
 
             </View>
+
+            <TouchableOpacity onPress={ () => Transfer()} style={styles.cara}>
+                <Text style={styles.cara_text}>Cara Bayar</Text>
+            </TouchableOpacity>
 
             <View style={styles.bottom_navigation}>
 
@@ -149,6 +158,18 @@ const styles = StyleSheet.create({
         paddingVertical: '2%',
         paddingHorizontal:'11%',
         fontWeight: 'bold',
+    },
+
+    cara:{
+        alignSelf:'center',
+        marginTop:'10%',
+    },
+    
+    cara_text:{
+        fontSize:25,
+        paddingVertical: '2%',
+        paddingHorizontal:'11%',
+        borderWidth:2,
     },
 
 })

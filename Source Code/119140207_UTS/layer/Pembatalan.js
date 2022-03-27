@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { FontAwesome, MaterialCommunityIcons, Feather } from '@expo/vector-icons';
+import Desc from '../components/Desc';
 
-const Pembatalan = ({navigation}) => {
+const Pembatalan = ({navigation, route}) => {
 
     return(
 
@@ -10,7 +10,15 @@ const Pembatalan = ({navigation}) => {
 
             <Text style={styles.title}>Daftar Pembatalan</Text>
 
-            <View style={styles.pesanan_list}>
+            <View style={{marginTop:'5%'}}>
+
+                <Desc
+                    awal={route.params.awal} 
+                    tujuan={route.params.tujuan} 
+                    layanan={route.params.layanan} 
+                    tanggal={route.params.tanggal} 
+                    waktu={route.params.waktu}
+                />
 
             </View>
 

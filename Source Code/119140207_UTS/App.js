@@ -8,6 +8,7 @@ import Pesanan from './layer/Pesanan';
 import Pembatalan from './layer/Pembatalan';
 import Konfirmasi from './layer/Konfirmasi';
 import Detail from './layer/Detail';
+import Dummy from './layer/Dummy';
 
 const Stack = createNativeStackNavigator();
 
@@ -25,6 +26,8 @@ const App = () => {
         <Stack.Screen name="Rincian" component={Rincian} />
         <Stack.Screen name="Konfirmasi" component={Konfirmasi} /> 
         <Stack.Screen name="Detail" component={Detail} /> 
+
+        <Stack.Screen name="Dummy" component={Dummy} /> 
 
       </Stack.Navigator>
 

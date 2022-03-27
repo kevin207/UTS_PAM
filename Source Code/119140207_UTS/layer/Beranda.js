@@ -168,7 +168,7 @@ const Beranda = ({navigation}) => {
                     <Text style={styles.nav_text}>Beranda</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.nav_menu} onPress={ () => navigation.navigate('Pesanan')}>
+                <TouchableOpacity style={styles.nav_menu} onPress={ () => navigation.navigate('Dummy')}>
                     <FontAwesome name="book" size={30} color="#0d5794" />
                     <Text style={styles.nav_text}>Pesanan Saya</Text>
                 </TouchableOpacity>

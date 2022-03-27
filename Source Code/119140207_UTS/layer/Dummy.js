@@ -1,32 +1,15 @@
+
+
 import { StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import { FontAwesome, MaterialCommunityIcons, Feather } from '@expo/vector-icons';
-import Desc from '../components/Desc';
 
-const Pesanan = ({navigation, route}) => {
-
-    const Detail = () => {
-      
-        navigation.navigate('Detail',{ nama: route.params.nama , gender: route.params.gender, umur: route.params.umur, awal: route.params.awal, tujuan: route.params.tujuan, layanan: route.params.layanan, waktu: route.params.waktu, tanggal: route.params.tanggal})
-    
-    }
+const Dummy = ({navigation, route}) => {
 
     return(
 
         <View style={styles.container}>
 
             <Text style={styles.title}>Daftar Pemesanan</Text>
-
-            <TouchableOpacity  style={styles.pesanan_list} onPress={ () => Detail()} >
-               
-               <Desc
-                    awal={route.params.awal} 
-                    tujuan={route.params.tujuan} 
-                    layanan={route.params.layanan} 
-                    tanggal={route.params.tanggal} 
-                    waktu={route.params.waktu}
-                />
-
-            </TouchableOpacity>
 
             <View style={styles.bottom_navigation}>
 
@@ -40,7 +23,7 @@ const Pesanan = ({navigation, route}) => {
                     <Text style={styles.nav_text}>Pesanan Saya</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.nav_menu} onPress={ () => navigation.navigate('Pembatalan')}>
+                <TouchableOpacity style={styles.nav_menu} onPress={ () => navigation.navigate('Pembatalan', { awal: route.params.awal, tujuan: route.params.tujuan, layanan: route.params.layanan, tanggal: route.params.tanggal, waktu: route.params.waktu})}>
                     <MaterialCommunityIcons name="file-cancel" size={30} color="#0d5794" />
                     <Text style={styles.nav_text}>Pembatalan</Text>
                 </TouchableOpacity>
@@ -98,10 +81,6 @@ const styles = StyleSheet.create({
         marginTop:'5%',
     },
 
-    pesanan_list:{
-        marginVertical:'5%'
-    },
-
 })
 
-export default Pesanan;
+export default Dummy;
